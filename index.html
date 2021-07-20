@@ -14260,8 +14260,8 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="How-can-I-make-my-League-of-Legends-team-work-more-effectively?">How can I make my League of Legends team work more effectively?<a class="anchor-link" href="#How-can-I-make-my-League-of-Legends-team-work-more-effectively?">&#182;</a></h1><p>Cole Watkins</p>
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>League of Legends is one of the first MOBA-style games from the developer Riot Games. Two teams of five must compete against each other to destroy each other's structures and compete over side-objectives to ultimately destroy the other team's main base called the nexus. Each team consists of a player in the top lane, a player in the middle lane, a player in between the lanes in an area called the "jungle", and two players in the bottom lane. There are a litany of game mechanics to learn and master, and I will be comparing myself and my friend's proficiencies in some of these game mechanics.</p>
-<p>I have a thought in my head of who is better or worse at this game in my friend group, but I would like to get into the nitty gritty of who's the best/worst at specific game mechanics in order for us to work better together as a team, or even just something to help me get better at the game, as I adore improving at my video game skill.</p>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>League of Legends is one of the first MOBA-style games, and it is from the developer Riot Games. Two teams of five "champions" must compete against each other to destroy each other's structures and compete over objectives to ultimately destroy the other team's main base called the nexus. Each team consists of a player in the top lane, a player in the middle lane, a player in between the lanes in an area called the "jungle", and two players in the bottom lane. There are a litany of game mechanics to learn and master, and I will be comparing myself and my friend's proficiencies in some of these game mechanics.</p>
+<p>I have a thought in my head of who is better or worse at this game in my friend group, but I would like to get into the nitty gritty of who's the best/worst at specific game mechanics, or who's the best in each lane in order for us to work better together as a team, or even just something to help me get better at the game, as I adore improving at my video game skill.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14333,13 +14333,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This second request will vary on what queue type you are looking for. My friends and I play mostly normal games and ARAM games, so I will be looking at queue=400 (normals), as ARAM games are not tracked as well.</p>
+<p>This second request will vary on what queue type you are looking for. My friends and I play mostly normal games and ARAM games, which are just two different queue types, so I will be looking at queue=400 (normals). ARAM game data is not tracked very well, so we will not be examining it.</p>
 <p>Queue ids can be found here: <a href="https://static.developer.riotgames.com/docs/lol/queues.json">https://static.developer.riotgames.com/docs/lol/queues.json</a></p>
-<p>The other value you have to pay attention is season. I personally have played a lot this current season, which is season 11, so I will be using season=13. Documentation for season ID is unfortunately deprecated. You'll have to trial and error this.</p>
-<p>Additionally, since seasonID is deprecated, you'll have to manually check the dataframe to make sure it has this year's games.
-This can be done by cross-referencing the dataframe with League of Legends' match history (<a href="https://matchhistory.na.leagueoflegends.com/en/#match-history">https://matchhistory.na.leagueoflegends.com/en/#match-history</a>) and by checking the number of games you have in your LoL client. (Profile -&gt; stats -&gt; hover over games played to see queue type). Sadly this does not count ARAM games, so that would also have to be manually checked.</p>
+<p>The other value you have to pay attention to is season. I personally have played a lot this current season, which is season 11, so I will be using season=13. Season ID for the previous few seasons is under this ID.</p>
+<p>Additionally, since season ID is deprecated, you'll have to manually check the dataframe pulled from the API request to make sure it has this year's games.
+This can be done by cross-referencing the dataframe with League of Legends' match history (<a href="https://matchhistory.na.leagueoflegends.com/en/#match-history">https://matchhistory.na.leagueoflegends.com/en/#match-history</a>) and by checking the number of games you have in your League of Legends client. (Profile -&gt; stats -&gt; hover over games played to see queue type). Sadly this does not count ARAM games, so that would also have to be manually checked.</p>
 <p>Data requests can only have 100 matches per request, so we'll have to make multiple requests and stitch them together. Furthermore, the API limits requests to 20 requests per second or 100 requests per 2 minutes, so this implementation must be built around that.</p>
-<p>Once we have retrieve these values we must isolate the matches data from the request into a dataframe.</p>
+<p>Once we have retrieved these values, we must isolate the matches data from the request into a dataframe.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14377,11 +14377,7 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Users to be compared as I will be using first names for my sake.</p>
-<p>Coolgum15 = Cole (Me!)</p>
-<p>Rotome = Jerry</p>
-<p>Dublaiar = Aidan</p>
-<p>I have had 187 normal games of League of Legends this year, and I will compare this data to the same data my friends have acheived in the past 187 normal games</p>
+<p>I have had 187 normal games of League of Legends this year, and I will compare this data to the same data my friends have achieved in the past 187 normal games.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14390,7 +14386,11 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#requests via function</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Users to be compared as I will be using first names in code for my sake.</span>
+<span class="c1">#Coolgum15 = Cole</span>
+<span class="c1">#Rotome = Jerry</span>
+<span class="c1">#Dublaiar = Aidan</span>
+<span class="c1">#requests via function</span>
 
 <span class="n">cole_norms</span> <span class="o">=</span> <span class="n">get_matches</span><span class="p">(</span><span class="s2">&quot;Coolgum15&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">187</span><span class="p">)</span>
 <span class="n">aidan_norms</span> <span class="o">=</span> <span class="n">get_matches</span><span class="p">(</span><span class="s2">&quot;Dublaiar&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">187</span><span class="p">)</span>
@@ -14448,6 +14448,39 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
     <tr>
       <th>0</th>
       <td>NA1</td>
+      <td>3983143443</td>
+      <td>7</td>
+      <td>400</td>
+      <td>13</td>
+      <td>1626782669904</td>
+      <td>SOLO</td>
+      <td>MID</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NA1</td>
+      <td>3983058963</td>
+      <td>83</td>
+      <td>400</td>
+      <td>13</td>
+      <td>1626775632895</td>
+      <td>SOLO</td>
+      <td>TOP</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NA1</td>
+      <td>3983086561</td>
+      <td>143</td>
+      <td>400</td>
+      <td>13</td>
+      <td>1626773645888</td>
+      <td>DUO_SUPPORT</td>
+      <td>BOTTOM</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NA1</td>
       <td>3981851859</td>
       <td>268</td>
       <td>400</td>
@@ -14457,7 +14490,7 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
       <td>TOP</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>4</th>
       <td>NA1</td>
       <td>3980383193</td>
       <td>268</td>
@@ -14466,39 +14499,6 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
       <td>1626562870130</td>
       <td>DUO_SUPPORT</td>
       <td>NONE</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NA1</td>
-      <td>3979811190</td>
-      <td>154</td>
-      <td>400</td>
-      <td>13</td>
-      <td>1626500957506</td>
-      <td>NONE</td>
-      <td>JUNGLE</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NA1</td>
-      <td>3978656378</td>
-      <td>29</td>
-      <td>400</td>
-      <td>13</td>
-      <td>1626409869664</td>
-      <td>DUO_CARRY</td>
-      <td>BOTTOM</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NA1</td>
-      <td>3978612280</td>
-      <td>268</td>
-      <td>400</td>
-      <td>13</td>
-      <td>1626408168455</td>
-      <td>SOLO</td>
-      <td>MID</td>
     </tr>
   </tbody>
 </table>
@@ -14514,9 +14514,10 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Then we can request once again, this time using the gameId to get the specific data of that match. Since this will be processing a large number of requests, as we must make a request for each match (187 per player!), the requests must be structured around the previously mentioned 100 requests per 2 minutes.</p>
+<p>Then we can request once again, this time using the gameId from the above dataframe to get the specific data of that match. Since this will be processing a large number of requests, as we must make a request for each match (187 per player!), the requests must be structured around the previously mentioned 100 requests per 2 minutes.</p>
 <p>From this request, we are going to isolate teammate data for analysis.</p>
-<p>From this isolated teammate data, we will also remove unnecessary columns that represent parts of the game that do not impact performance (such as summoner icon), counters that don't tell us much (like number of ability casts, which varies greatly across champions), deprecated game features (like purchasable vision wards that are not control wards), account details (we don't care about puuid/summoner id anymore, only summoner name), or champion specific mechanics (like transformations).</p>
+<p>From this isolated teammate data, we will also remove unnecessary columns that represent parts of the game that do not impact performance (such as summoner icon), counters that don't tell us much (like number of ability casts, which varies greatly across champions), deprecated game features (like purchasable vision wards that are not control wards), account details (like IDs), or champion specific mechanics (like transformations).</p>
+<p>Additionally, some matches when requested are simply just missing parameters. For example, some columns just may not exist in a match dataframe. I have no idea why this happens, but it's out of your control and sometimes a group of matches just won't pull to your formatting if you're pulling data based on a missing column.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15325,9 +15326,9 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Processing">Data Processing<a class="anchor-link" href="#Data-Processing">&#182;</a></h1><h1 id="Winrates">Winrates<a class="anchor-link" href="#Winrates">&#182;</a></h1><p>There are a lot of game aspects in League of Legends to examine, so let's look at the result of all the mechanics: win rate. This will be done by finding each user's summonerName entry in the dataframe and the win entry. Each role (Top, jungle, middle, bottom, and support, AKA: top, jg, mid, bot, supp) will be examined.</p>
+<h1 id="Data-Processing">Data Processing<a class="anchor-link" href="#Data-Processing">&#182;</a></h1><h1 id="Win-rates">Win rates<a class="anchor-link" href="#Win-rates">&#182;</a></h1><p>There are a lot of game aspects in League of Legends to examine, so let's look at the result of all the mechanics: win rate. This will be done by finding each user's summonerName in the column in the dataframe and the win column. Each role (Top, jungle, middle, bottom, and support, AKA: top, jg, mid, bot, supp) will be examined.</p>
 <p>Now each player plays certain roles more/less frequently. We can also track role frequency to better assess the player's skill.</p>
-<p>Here we will also remove any role under 5% play rate, which is about 10 games, and anything less than 10 games tells us very little about their performance in a lane.</p>
+<p>We will remove any role under 5% play rate, which is about 10 games. Anything less than 10 games tells us very little about their performance in a lane.</p>
 <p>I'm anticipating Rotome will have the highest win rate, and Dublaiar will have to lowest.</p>
 
 </div>
@@ -15918,8 +15919,8 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The data confirms my suspicions! There is also some interesting data here for Coolgum15 and Dublaiar, where even in their most played roles (Coolgum15: Jungle, Middle and Dublaiar: Bottom) are below 50% win rate. From this data, those two should maybe abandon their more played roles for other roles where they have higher win rates like Support (Utility).</p>
-<h1 id="Skewed-Matchmaking">Skewed Matchmaking<a class="anchor-link" href="#Skewed-Matchmaking">&#182;</a></h1><p>There is a complaint in our friend group that I would like to investigate. One person, David, that we play with sometimes is way better than us, and because of how matchmaking in League of Legends works, our average game playing with him feels harder to win than usual. He tries to alleviate this by going on a new account called a "smurf" where the matchmaking shouldn't have detected that he is good yet. So let's look into games where we play with his account or his smurf: StalwartHide / RyeBreadPitt</p>
+<p>The data confirms my suspicions! There is also some interesting data here for Coolgum15 and Dublaiar. In their most played roles (Coolgum15: Jungle, Middle and Dublaiar: Bottom), the win rate is below 50%. This data shows that those two players should play other roles with higher win rates if they wish to contribute more to the team overall.</p>
+<h1 id="Skewed-Matchmaking">Skewed Matchmaking<a class="anchor-link" href="#Skewed-Matchmaking">&#182;</a></h1><p>There is a complaint in our friend group that I would like to investigate. One person, David, that we play with sometimes, is better than us at League of Legends. When he plays with us, League of Legends acknowledges his skill level, and pick harder opponents for us. To keep us from playing above our skill level, he goes on a new account called a "smurf" where League of Legends shouldn't have detected his skill level. So let's look into games where we play with his account or his smurf: StalwartHide / RyeBreadPitt</p>
 <p>I will also be removing entries for lanes with no data, as there are lanes with no data due to not playing a lot of games of League with David.</p>
 <p>Since we are looking at performance with David overall, we can remove lane-specific columns to get a cleaner representation.</p>
 
@@ -16105,11 +16106,11 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The data here is quite mixed. Some players perform better when David is on StalwartHide (Dublaiar) and others perform worse. Some players perform better when David is on RyeBreadPitt (Coolgum15) and others perform worse. I would say that the smurf has no overall impact if we all played a game together, but if a single player were to play a game with only David, they could be very excited or not interested at all depending on the account. However, I can definitely confirm my suspicions that playing with David's main account StalwartHide is harder than a game without him for me.</p>
+<p>The data here is quite mixed. Some players perform better when David is on StalwartHide (Dublaiar) and others perform worse. Some players perform better when David is on RyeBreadPitt (Coolgum15) and others perform worse. I would say that the smurf has no overall impact if we all played a game together, but if a single player were to play a game with only David, they could be very excited or not interested at all depending on the account. However, I can definitely confirm my suspicions that playing with David's main account StalwartHide is harder than a game without him for me (Coolgum15).</p>
 <p>Now let's look into the parts of gameplay that are not great in order to improve a player's gameplay and their win rates.</p>
-<h1 id="Creep-Score-(CS)">Creep Score (CS)<a class="anchor-link" href="#Creep-Score-(CS)">&#182;</a></h1><p>In League of Legends, one of the most important aspects of your gameplay is how much money you earn. A large amount of money can come from kills, but an even larger amount can be gained through killing enemy minions or neutral jungle monsters. Killing enemy minions and jungle monsters will contribute to your creep score, or CS, and I want to investigate how creep score impacts each player's win rate. Specifically, I want to examine how creep score difference from a player's lane opponent impacts their win rate.</p>
+<h1 id="Creep-Score-(CS)">Creep Score (CS)<a class="anchor-link" href="#Creep-Score-(CS)">&#182;</a></h1><p>In League of Legends, one of the most important aspects of your gameplay is how much money you earn. A large amount of money can come from kills, but an even larger amount can be gained through killing enemy minions or neutral jungle monsters. Killing enemy minions and jungle monsters will contribute to your creep score, or CS. I want to investigate how creep score impacts each player's win rate. Specifically, I want to examine how creep score difference from a player's lane opponent impacts their win rate.</p>
 <p>I'm choosing to represent all players on one graph in order to make comparisons easier, despite the messy nature of combining graphs.</p>
-<p>In this representation, we will find the lane opponent in each match and find the difference between the player and the opponent. Then, CS difference, along with whether that match was a win/loss, will be split into several different buckets that are in a range &lt;-50 to &gt;50 cs difference in increments of 10. The overall win rate of each bucket will be plotted.</p>
+<p>In this representation, we will find the lane opponent in each match and find the difference between the player and the opponent. Then, CS difference, along with whether that match was a win/loss, will be split into several different buckets that are in a range of &lt;(-50) to &gt;50 cs difference in increments of 10. The overall win rate of each bucket will be plotted. The reason this was done is because the data is too small to do winrate by singular CS differences, and would give a plot that would have tons of missing data and would be next to meaningless.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16271,8 +16272,8 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This data is hard to interpret, so we'll implement some machine learning and use a linear regression line for each player's data.</p>
-<p>The plot above also does not consider the weight of each point, which we will also do in the linear regression.</p>
+<p>This data is hard to interpret, so we'll implement a linear regression line for each player's data. The main reason we are using a linear regression is that CS difference in a player's favor should be a strictly increasing trend, as it means you're more powerful, meaning you should probably win more.</p>
+<p>The plot above also does not consider the weight of each point, which we will consider in the linear regression.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16382,20 +16383,20 @@ This can be done by cross-referencing the dataframe with League of Legends' matc
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The fit on any of these lines is not great, but there is still some information we can unpack here.</p>
-<p>Dublaiar's CS score has almost no impact on their performance, meaning that he is not making use of his gold and not pushing his lead further, but does play safe when behind.</p>
-<p>Meanwhile, Coolgum15 has high cs, but also the worst performance with low cs. This tells me that I do push my lead to victory, but I can't play safe when I'm behind on CS and end up losing</p>
+<p>Dublaiar's CS score has almost no impact on his performance, meaning that he is not making use of his gold from CS and not pushing his lead further, but does play safe when behind on CS.</p>
+<p>Meanwhile, Coolgum15 has high CS, but also the worst performance with low cs. This tells me that I do push my lead to victory, but I can't play safe when I'm behind on CS and end up losing.</p>
 <p>Rotome has a very similar regression to mine; However, Rotome has a higher win rate with high CS, meaning that he is pushing his lead more effectively than me. This also tells the rest of my team that if we want to win, our best bet is to get Rotome all the CS he can get.</p>
-<p>Commenting on the accuracy of these points and this regression, while most of these CS bucket ranges have sufficient amounts of data, not all of them do. I did have to code around one case where there was 0 data in that bucket, despite there being ~160 games per player. Additionally, outliers like Dublaiar's low win rate at a 40-50 CS lead are dubious and would be rolled out in any sample size larger than this one. Unfortunately for this dataset, my friends and I have a lives outside of League of Legends.</p>
+<p>Commenting on the accuracy of these points and this regression, while most of these CS bucket ranges have sufficient amounts of data, not all of them do. I did have to code around one case where there was 0 data in that bucket, despite there being ~160 games per player. Additionally, outliers like Dublaiar's low win rate at a 40-50 CS lead are dubious and would be ironed out in any sample size larger than this one. Unfortunately for this dataset, my friends and I have lives outside of League of Legends.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h1><p>There are several useful conclusions from the gathered data that can push the players to do better as a whole. I will be communicating these with my team in order for us to do better in future games.</p>
-<p>David: If our group ever decides to play with David, he doesn't have to worry about switching to his smurf account and can instead focus on leveling his main account, as the matchmaking does not favor his smurf to the group overall.</p>
+<p>David: If our group ever decides to play with David, he doesn't have to worry about switching to his smurf account and can instead focus on playing on his main account, as the matchmaking does not favor his smurf to the group overall.</p>
 <p>Jerry (Rotome): Jerry needs to work on playing from behind. His win rates are lower than they could be, and he would benefit from playing safer when he is behind in CS. However, his middle lane game is on point, and he has a solid win rate in the mid-lane and should continue to lane there. Furthermore, since Jerry has the highest winrate while ahead, the team's priority should be to get Jerry CS, as it makes our team more likely to win.</p>
 <p>Cole (Coolgum15): As much as I play jungle in order to fill a role for the team, I should either get serious about getting better at jungle or switch to a different role that I am more successful in, like top or support. Additionally, I need to work on my middle lane play, because I'm going to keep playing it because I love it so much. I should probably listen to Jerry about mid-lane and pay attention to his gameplay considering how good his mid win rate is. Furthermore, I play HORRIBLY when behind on CS and need to improve my CS-ing skills in a bad situation, as well as getting better at playing from behind.</p>
-<p>Aidan (Dublaiar): Aidan has plenty of areas to improves in, whether that be bot lane overall, or pushing his lead while ahead on CS, or even branching out to other roles. Aidan should most likely shift to support if he cares greatly about win rates.</p>
+<p>Aidan (Dublaiar): Aidan has plenty of areas to improves in, whether that is bot lane overall, or pushing his lead while ahead on CS, or even branching out to other roles. Aidan should most likely shift to support if he cares greatly about win rates.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
